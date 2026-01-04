@@ -250,6 +250,76 @@ main #home {
     box-shadow: 0px 6px 15px rgba(225, 6, 0, 0.4);
 }
 
+/* Popup Modal Styles */
+
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+}
+
+#bookingModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: #ffffff;
+    padding: 2rem;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 101;
+    text-align: left;
+}
+
+#bookingModal h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+#bookingModal i {
+    margin-right: 0.65rem;
+}
+
+#bookingModal p {
+    margin-left: 2rem
+}
+    
+#closeModal {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    cursor: pointer;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#bookingModal.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
 #services {
     background-color: #FFFFFF;
     padding: 2rem 0 2rem 0;
